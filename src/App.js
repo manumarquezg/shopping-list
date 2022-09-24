@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Badge from 'react-bootstrap/Badge';
 import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
@@ -70,7 +71,7 @@ function App() {
       <hr />
       <Row className="mb-4">
         <Col>
-          <h3>Shopping list:</h3>
+          <h3>Shopping list <Badge bg="dark" pill>{products.length} products</Badge></h3>
           <ListGroup>
             {products.map((product) => {
               return (
