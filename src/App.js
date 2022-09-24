@@ -1,7 +1,14 @@
-import './App.css';
-
 import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import './App.css';
 
 
 function App() {
@@ -45,36 +52,39 @@ function App() {
   }
 
   return (
-    <div className="ProductsPage">
-      <div className="ProductsForm">
-        <h2>Add a product to the list:</h2>
-        <form onSubmit={createProduct}>
-          <fieldset>
-            <label>
-              <p>Name</p>
-              <input name="name" />
-            </label>
-            <label>
-              <p>Quantity</p>
-              <input name="quantity" />
-            </label>
-          </fieldset>
-          <button type="submit">Add product</button>
-        </form>
-      </div>
-      <div className="ProductsList">
-        <h2>Shopping list:</h2>
-        <ul>
-          {products.map((product) => {
-            return (
-                <li className="Product" key={product.id}>
-                  <p>{product.name} ({product.quantity})</p>
-                </li>
-            );
-          })}
-        </ul>
-      </div>
-    </div>
+    <Container className="my-4">
+      <Row className="mb-4">
+        <Col>
+          <h3>Add a product to the list:</h3>
+          <Form onSubmit={createProduct}>
+            <Form.Group class="mb-2">
+              <Form.Label>Name</Form.Label>
+              <Form.Control name="name"/>
+            </Form.Group>
+            <Form.Group class="mb-2">
+              <Form.Label>Quantity</Form.Label>
+              <Form.Control type="number" name="quantity" />
+            </Form.Group>
+            <Button type="submit" variant="primary">Add product</Button>
+          </Form>
+        </Col>
+      </Row>
+      <hr />
+      <Row className="mb-4">
+        <Col>
+          <h3>Shopping list:</h3>
+          <ListGroup>
+            {products.map((product) => {
+              return (
+                  <ListGroup.Item className="Product" key={product.id}>
+                    <p>{product.name} ({product.quantity})</p>
+                  </ListGroup.Item>
+              );
+            })}
+          </ListGroup>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
