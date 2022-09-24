@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Installed apps
     "rest_framework",
+    "corsheaders",
     # Local apps
     "shopping.shoppinglist",
 ]
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -135,3 +137,6 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.AllowAny",
     ]
 }
+
+# Whitelist the frontend to avoid CORS issues on the local environment
+CORS_ORIGIN_WHITELIST = ["http://localhost:3000"]
