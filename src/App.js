@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
 import axios from 'axios';
+
 import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-import './App.css';
 
 
 function App() {
@@ -25,10 +23,10 @@ function App() {
           setProducts(response.data);
         })
         .catch((err) => {
-            console.log(err.message);
+          console.log(err.message);
         })
-        .finally(() => { setFetchProducts(false)} );
-      }
+        .finally(() => { setFetchProducts(false) });
+    }
   }, [fetchProducts]);
 
   const createProduct = event => {
@@ -47,7 +45,7 @@ function App() {
         setFetchProducts(true);
       })
       .catch((err) => {
-          console.log(err.message);
+        console.log(err.message);
       });
   }
 
@@ -59,7 +57,7 @@ function App() {
           <Form onSubmit={createProduct}>
             <Form.Group class="mb-2">
               <Form.Label>Name</Form.Label>
-              <Form.Control name="name"/>
+              <Form.Control name="name" />
             </Form.Group>
             <Form.Group class="mb-2">
               <Form.Label>Quantity</Form.Label>
@@ -76,9 +74,9 @@ function App() {
           <ListGroup>
             {products.map((product) => {
               return (
-                  <ListGroup.Item className="Product" key={product.id}>
-                    <p>{product.name} ({product.quantity})</p>
-                  </ListGroup.Item>
+                <ListGroup.Item className="Product" key={product.id}>
+                  <p>{product.name} ({product.quantity})</p>
+                </ListGroup.Item>
               );
             })}
           </ListGroup>
