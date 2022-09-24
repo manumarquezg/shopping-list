@@ -1,15 +1,19 @@
 import './App.css';
 
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 
 function App() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-      fetch('http://localhost:8000/api/v1/shoppinglist/products/')
-        .then((response) => response.json())
-        .then((data) => {
-          setProducts(data);
+      axios({
+        method: 'get',
+        url: 'http://localhost:8000/api/v1/shoppinglist/products/'
+      })
+        .then((response) => {
+          setProducts(response.data);
         })
         .catch((err) => {
             console.log(err.message);
