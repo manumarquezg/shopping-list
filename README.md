@@ -2,7 +2,7 @@
 
 ## Backend
 
-### Configuration and installation
+### Run manually
 
 #### Install dependencies and virtual environment
 
@@ -30,9 +30,7 @@ pipenv shell
 
 Select a name and password for the super user.
 
-### Run the server
-
-#### Locally
+#### Run the server
 
 Inside the Python virtual env:
 
@@ -41,6 +39,20 @@ Inside the Python virtual env:
 ```
 
 Go to [http://localhost:8000/](http://localhost:8000/).
+
+### Run with docker
+
+#### Build docker image
+
+```bash
+docker build . -t shopping-list
+```
+
+#### Run the docker image
+
+```bash
+docker run -p 8000:8000 -it shopping-list:latest
+```
 
 ### Admin panel
 
