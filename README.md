@@ -1,5 +1,7 @@
 # Shopping list
 
+![Screenshot](.img/screenshot.png)
+
 ## Backend
 
 ### Run manually
