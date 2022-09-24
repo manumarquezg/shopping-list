@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/manumarquezg/shopping-list/compare/v0.1.0...v0.2.0) (2022-09-24)
+
+
+### Features
+
+* add products counter ([0f57ef6](https://github.com/manumarquezg/shopping-list/commit/0f57ef6bc29db071bf7394f3f77be17630c30ff4))
+
 ## 0.1.0 (2022-09-24)
 
 
